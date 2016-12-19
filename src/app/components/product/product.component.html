@@ -1,0 +1,13 @@
+<figure class="product">
+	<div class="contImg">
+		<img [src]="val.img" [alt]="val.name">		
+		<div class="notAvalible" [innerText]="validateAvalible(val.available)" *ngIf="!val.available"></div>
+		<div class="star" *ngIf="val.best_seller" title="Mejor Vendido"></div>
+	</div>
+		<figcaption>
+		<h2 [innerText]="val.name"></h2>
+		<p [innerText]="val.description"></p>
+		<small [innerText]="val.price | currency:$:true:'1.0-0'"></small>
+		<button (click)="addCart(val, val.id)" [disabled]="!val.available">Agregar</button>
+	</figcaption>
+</figure>

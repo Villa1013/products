@@ -1,0 +1,232 @@
+/*-------------------------------------------------------------*/
+/* Name of Project: Products */
+/* File name: style.sass */
+/* Description: Global style sheet */
+/* Author: Esteban Vera */
+/*-------------------------------------------------------------*/
+
+/*--------------------COMMENT----------------------------------*/
+/* Responsive: Yes */
+/*-------------------------------------------------------------*/
+
+
+
+
+/*------------------------------------*/
+   /* $IMPORTS EXTERNAL */
+/*------------------------------------*/
+@import "node_modules/susy/sass/susy"
+@import "node_modules/breakpoint-sass/stylesheets/_breakpoint"
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700')
+
+
+/*------------------------------------*/
+  /*  $VARIABLES & COLORS */
+/*------------------------------------*/
+$bg   : #f9f9f9
+$white: #ffffff
+$black: #333333
+$red  : #fe5c59
+$gray : #c8c8c8
+$green: #67CE90
+
+/*---Breakpoints--*/
+$tablet: max-width 1024px
+$phone: max-width 768px
+
+/*------Susy-----*/
+$container: 100%
+$susy: (columns: 12, gutters: (1/4), gutter-position: inside)
+
+
+
+
+
+
+
+
+/*------------------------------------*/
+  /*   $FUNCTIONS */
+/*------------------------------------*/
+
+@function rem($sizeValue)
+  $remy: ($sizeValue / 16)+rem
+  @return $remy
+
+
+
+
+
+
+
+
+/*------------------------------------*/
+  /*   $MIXINS */
+/*------------------------------------*/
+=block()
+	display: block
+
+=bold()
+	font-weight: bold
+
+=upper()
+	text-transform: uppercase
+
+=clearfix()
+	display: inline-block
+	*display: inline
+	zoom: 1
+	width: 100%
+
+=box()
+	box-sizing: border-box
+
+=align($el)
+	display: inline-block
+	vertical-align: $el
+	*display: inline
+	zoom: 1
+
+
+
+
+
+
+.animated 
+	animation-duration: 1s;
+	animation-fill-mode: both
+	&.bounceIn
+
+
+.bounceIn 
+	animation-name: bounceIn
+	animation-duration: .75s  
+
+@keyframes bounceIn  
+	from, 
+	20%, 
+	40%, 
+	60%, 
+	80%, 
+	to 
+		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000)
+	0% 
+		opacity: 0
+		transform: scale3d(.3, .3, .3)
+	20% 
+		transform: scale3d(1.1, 1.1, 1.1)
+	40% 
+		transform: scale3d(.9, .9, .9)
+	60% 
+		opacity: 1
+		transform: scale3d(1.03, 1.03, 1.03)
+	80% 
+		transform: scale3d(.97, .97, .97)
+	to  
+		opacity: 1
+		transform: scale3d(1, 1, 1)
+ 
+
+
+
+
+
+/*------------------------------------*/
+  /*   $VIEW COMPONENTS */
+/*------------------------------------*/
+@import "src/app/components/partials/header/header.component"
+@import "src/app/components/partials/footer/footer.component"
+@import "src/app/components/home/home.component"
+@import "src/app/components/product/product.component"
+
+
+
+
+
+
+
+
+/*------------------------------------*/
+  /*   $ICONS */
+/*------------------------------------*/
+
+@font-face 
+  font-family: 'icomoon'
+  src:  url('../fonts/icomoon.eot?uutxzy')
+  src:  url('../fonts/icomoon.eot?uutxzy#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?uutxzy') format('truetype'), url('../fonts/icomoon.woff?uutxzy') format('woff'), url('../fonts/icomoon.svg?uutxzy#icomoon') format('svg')
+  font-weight: normal
+  font-style: normal
+
+[class^="icon-"], [class*=" icon-"]
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icomoon' !important
+	speak: none
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	text-transform: none
+	line-height: 1
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+.icon-minus:before
+	content: "\f068"
+.icon-close:before
+	content: "\e900"
+.icon-plus:before
+	content: "\e901"
+
+
+
+
+
+
+
+
+
+/*------------------------------------*/
+  /*   $GENERAL */
+/*------------------------------------*/
+*
+	outline: none 
+
+html,
+body
+	margin: 0
+	padding: 0
+	height: 100%
+
+img
+  vertical-align: top
+  margin: 0
+
+p
+	margin: 0 0 15px 0
+	line-height: rem(20)
+
+body
+	background: $bg
+	font-size: rem(14)
+	font-family: 'Lato', sans-serif
+
+
+ 
+.wrapper
+	+block()
+	max-width: 1200px
+	width: 100% 
+	margin: 0 auto
+
+.loader
+	position: fixed
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	background: url(../imgs/logo.png) center no-repeat $white
+
+
+
+

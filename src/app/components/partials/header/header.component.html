@@ -1,0 +1,71 @@
+<div class="cart" (click)="this.showCarts = !this.showCarts">
+	<img src="../../../../assets/imgs/cart.png" alt="">
+	<div class="cont animated" *ngIf="contProducts > 0" [ngClass]="{'bounceIn': addNumber}">{{contProducts}}</div>
+</div>
+
+<img src="../../../../assets/imgs/logo.png" alt="" class="logo">
+
+
+<div class="ContCart" [ngClass]="{'active': showCarts}">
+	<div class="close"><i class="icon-close" (click)="this.showCarts = false"></i></div>
+	<ul>
+		<li *ngFor="let item of allCar, let i = index">
+			<figure>
+				<div class="contImg">
+					<img [src]="item.img" [alt]="item.name">
+				</div>
+				<figcaption>
+					<h3 [innerText]="item.name"></h3>
+					<small  [innerText]="sumaQuantity(item.price, item.quantity) | currency:$:true:'1.0-0'"></small>
+				</figcaption>
+			</figure>
+			<div class="events">
+				<button [disabled]="item.quantity < 2" (click)="subtract(i)" class="icon-minus"></button>
+				<div [innerText]="item.quantity"></div>
+				<button (click)="add(i)" class="icon-plus"></button>
+				<button (click)="remove(i)" class="icon-close"></button>
+			</div>
+		</li>
+		<div class="notResults" *ngIf="allCar.length == 0">
+			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			   viewBox="0 0 512.009 512.009" style="enable-background:new 0 0 512.009 512.009;" xml:space="preserve">
+			   <circle style="fill:#F7B239;" cx="256.004" cy="256.004" r="256.004"/>
+			   <path style="fill:#4D4D4D;" d="M362.736,353.886c-1.821,0-3.663-0.524-5.287-1.617c-30.001-20.179-65.08-30.846-101.447-30.846
+			      s-71.446,10.667-101.447,30.846c-4.35,2.925-10.244,1.77-13.169-2.577c-2.925-4.348-1.77-10.244,2.578-13.169
+			      c33.142-22.293,71.884-34.077,112.037-34.077c40.154,0,78.894,11.784,112.037,34.077c4.35,2.925,5.503,8.821,2.578,13.169
+			      C368.786,352.414,365.788,353.886,362.736,353.886z"/>
+			   <path style="fill:#E09B2D;" d="M287.513,369.876c-1.126,0-2.27-0.201-3.383-0.626c-18.404-7.028-37.86-7.027-56.259,0
+			      c-4.891,1.867-10.378-0.583-12.249-5.481c-1.87-4.896,0.585-10.379,5.481-12.249c22.828-8.716,46.964-8.717,69.795,0
+			      c4.896,1.87,7.351,7.353,5.481,12.249C294.935,367.552,291.334,369.876,287.513,369.876z"/>
+			   <g>
+			      <circle style="fill:#4D4D4D;" cx="142.672" cy="203.235" r="25.618"/>
+			      <circle style="fill:#4D4D4D;" cx="369.325" cy="203.235" r="25.618"/>
+			   </g>
+			   <g></g>
+			   <g></g>
+			   <g></g>
+			   <g></g>
+			   <g></g>
+			   <g></g>
+			   <g></g>
+			   <g></g>
+			   <g></g>
+			   <g></g>
+			   <g></g>
+			   <g></g>
+			   <g></g>
+			   <g></g>
+			   <g></g>
+			</svg>
+			<p>Carrito vacio</p>
+		</div>
+		
+	</ul>
+	<div class="contTotal">
+		<div class="total">
+			<p>Total</p>
+			<p [innerText]="total() | currency:$:true:'1.0-0'" class="pay"></p>
+		</div>
+		<button>Hacer pedido</button>
+	</div>
+</div>

@@ -1,0 +1,229 @@
+header
+	position: fixed
+	left: 0
+	right: 0
+	padding: 10px
+	top: 0
+	background: $white
+	z-index: 5
+	box-shadow: 0 8px 13px -6px #deded
+	text-align: center
+
+.logo
+	height: 25px
+	width: auto
+
+.cart
+	float: right 
+	cursor: pointer
+	margin-right: 5px
+	position: relative
+	img
+		width: 25px 
+		height: auto
+	.cont
+		position: absolute
+		top: 0
+		right: -10px
+		color: $white
+		+box()
+		+bold()
+		background: $green
+		border-radius: 50%
+		width: 20px
+		height: 20px
+		font-size: rem(10)
+		line-height: 20px
+		text-align: center
+
+
+.ContCart
+	position: fixed
+	right: 0
+	top: 35px
+	background: #f3f3f3
+	padding: 15px
+	width: 100%
+	border-radius: 0 0 5px 5px
+	+box()
+	max-width: 420px
+	transition: .3s
+	opacity: 0
+	visibility: hidden
+	z-index: -1
+	ul
+		padding: 0
+		margin: 10px 0 90px 0
+		max-height: 500px
+		overflow-y: auto
+		+clearfix()
+	li
+		list-style: none
+		background: $white
+		padding: 10px
+		border-radius: 5px
+		margin-bottom: 15px
+		box-shadow: 0 8px 13px -6px #dedede
+	figure
+		margin: 0 0 10px 0
+		border-bottom: 1px solid $gray + 40%
+		padding-bottom: 10px
+		+clearfix()
+		.contImg,
+		figcaption
+			float: left
+			+box()
+		.contImg
+			width: 40%
+			img
+				width: 100%
+				height: auto
+		figcaption
+			width: 60%
+			padding: 0 10px
+		h3
+			+upper()
+			margin: 5px 0
+		small
+			color: $red
+			font-size: rem(18)
+			+bold()
+	&.active
+		opacity: 1
+		visibility: visible
+		top: 45px
+	+breakpoint($phone)
+		z-index: 5
+		max-width: 100%
+		height: 100%
+		ul
+			max-height: 90%
+		&.active
+			top: 0
+
+
+
+.events
+	text-align: center
+	button,
+	div
+		+align(middle)
+	div
+		color: $green
+		+bold()
+		font-size: rem(18)
+	button
+		width: 40px
+		height: 40px
+		background: none
+		text-align: center
+		border-radius: 50%
+		border: 2px solid $gray + 30%
+		font-size: rem(14)
+		line-height: rem(35)
+		cursor: pointer
+		position: relative
+		transition: .3s
+		z-index: 2
+		overflow: hidden
+		&::after
+			content: ''
+			width: 50px
+			height: 50px
+			transition: .3s
+			border-radius: 50%
+			left: 50%
+			margin: -25px  0 0 -25px
+			top: 50%
+			z-index: -1
+			position: absolute
+			transform: scale(0)
+		&:disabled
+			color: $gray + 30% !important
+			cursor: default
+			border-color: $gray + 30% !important
+			&:hover,
+			&:active
+				&::after
+					transform: scale(0)
+		&.icon-plus,
+		&.icon-minus
+			color: $green
+			margin : 0 10px
+			&::after
+				background: $green
+		&.icon-close
+			color: crimson
+			margin: 0 15px
+			&::after
+				background: crimson
+		&:hover,
+		&:active
+			color: $white
+			&.icon-plus,
+			&.icon-minus
+				border-color: $green
+			&.icon-close
+				border-color: crimson
+			&::after
+				transform: scale(1)
+
+
+.contTotal
+	background: $white
+	border-radius: 5px 5px 0 0
+	box-shadow: 0 8px 13px -6px #dedede
+	position: absolute
+	left: 15px
+	right: 15px
+	bottom: 15px
+	z-index: 2
+	.total
+		+clearfix()
+		p
+			float: left
+			width: 50%
+			+box()
+			padding: 10px
+			text-align: left
+			+upper()
+			margin: 0
+			&.pay
+				text-align: right
+				color: $black
+				+bold()
+				font-size: rem(18)
+	button
+		background: $green
+		cursor: pointer
+		color: $white
+		+upper()
+		text-align: center
+		padding: 10px
+		+bold()
+		font-size: rem(18)
+		border: none
+		width: 100%
+		border-radius: 0 0 5px 5px
+		+box()
+
+
+.notResults
+	text-align: center
+	svg
+		width: 50px
+		height: auto
+	p
+		color: #afafaf
+		text-shadow: #f3f3f3 0px 0px 1px
+
+
+.close
+	float: right
+	color: $gray
+	transixtion: .3s
+	cursor: pointer
+	margin-right: 5px
+	&:hover,
+	&:active
+		color: $black

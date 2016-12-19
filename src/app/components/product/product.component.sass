@@ -1,0 +1,83 @@
+.product
+	background: $white
+	padding: 15px
+	margin: 0
+	border-radius: 5px
+	min-height: 300px
+	+clearfix()
+	+box()
+	box-shadow: 0 8px 13px -6px #dedede
+	transition: .3s
+	.contImg
+		margin: 0 0 15px 0
+		position: relative
+	img
+		width: 100%
+		height: auto 
+	h2
+		margin: 0 0 15px 0
+		font-size: rem(20)
+		+upper()
+	p
+		color: $gray
+		font-weight: 300
+	small
+		float: left
+		color: $red
+		font-size: rem(20)
+		line-height: rem(35)
+	button
+		float: right
+		+upper()
+		color: $white
+		border: none
+		background: $red
+		padding: 10px 20px
+		border-radius: 50px
+		cursor: pointer
+		position: relative
+		z-index: 2
+		overflow: hidden
+		&::after
+			content: ''
+			background: #ef504d
+			position: absolute
+			left: 0
+			width: 100%
+			bottom: 0
+			height: 0
+			z-index: -1
+			transition: .3s
+		&:disabled
+			background: #ccc
+			cursor: default
+			&:hover,
+			&:active
+				&::after
+					height: 0
+		&:hover,
+		&:active
+			&::after
+				height: 100%
+	&:hover
+		box-shadow: 0 10px 50px -6px #d4d4d4
+
+
+.notAvalible
+	background: $black
+	color: $white
+	padding: 5px 10px
+	position: absolute
+	top: 0
+	left: 50%
+	transform: translateX(-50%)
+	font-size: rem(12)
+	+upper()
+
+.star
+	background: url(../imgs/star.png) center no-repeat
+	position: absolute
+	right: 5px
+	top: 5px
+	width: 32px
+	height: 32px

@@ -1,0 +1,123 @@
+.contHome
+	margin-top: 75px
+	+clearfix()
+	select
+		float: right
+		max-width: 200px
+		width: 100%
+		margin: 10px 6px
+		appearance: none
+		border: 1px solid $gray + 40%
+		+box()
+		height: 40px
+		padding: 5px 10px
+		background: url(../imgs/down-arrow.png) right center  no-repeat $white
+		background-size: 25px
+	+breakpoint($phone)
+		.contSelect
+			margin: 10px 7px
+		select
+			max-width: 100%
+			float: none
+			margin: 0
+
+	
+.products 
+	+clearfix()
+	.column
+		+span(4) 
+		margin-bottom: 20px
+	+breakpoint($tablet)
+		.column
+			+span(6)
+	+breakpoint($phone)
+		.column 
+			+span(12 no-gutters) 
+			padding: 0 10px
+
+
+.large-3
+	+span(3)
+	+breakpoint($tablet)
+		+span(4)
+	+breakpoint($phone)
+		+span(12 no-gutters)
+.large-9
+	+span(9)
+	+breakpoint($tablet)
+		+span(8)
+	+breakpoint($phone)
+		+span(12 no-gutters)
+ 
+.filters
+	background: $white
+	border-radius: 5px
+	box-shadow: 0 8px 13px -6px #dedede
+	padding: 20px 10px
+	margin-top: 60px
+	h3
+		+upper()
+		font-size: rem(14)
+		color: $red
+		margin: 0
+	label
+		+block()
+		margin: 5px 0
+		+upper()
+		font-size: rem(12)
+		+bold()
+	.search,
+	.avalible,
+	.age
+		margin-bottom: 15px
+		padding: 10px 0
+	.search,
+	.avalible
+		border-bottom: 1px solid $gray + 40%
+	.search
+		input
+			width: 100%
+			+box()
+			padding: 10px
+			height: 30px
+			border: 1px solid $gray + 30%
+	.avalible
+		small
+			width: 100%
+			+block()
+			margin-bottom: 5px
+			padding: 5px 10px
+			cursor: pointer
+			+box()
+			border: 1px solid $gray + 30%
+			border-radius: 5px
+			transition: .3s
+			&:hover
+				border-color: $green
+				color: $green
+			&.active
+				background: $green
+				border-color: $green
+				color: $white
+	.range
+		.number,
+		input
+			+align(middle)
+			font-size: rem(12)
+		.number
+			+box()
+			width: 15%
+			text-align: center
+			padding: 0 5px
+		input
+			width: 60%
+	+breakpoint($phone)
+		margin: 0 10px
+		.search,
+		.avalible,
+		.age
+			padding: 5px 0
+		.avalible
+			small
+				+align(top)
+				width: 30%
