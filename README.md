@@ -2,6 +2,10 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
 
+Nodejs `v5.1.1`
+
+Npm `3.3.12`
+
 ## installation
 `git clone https://github.com/kiokotzu/products.git`
 
